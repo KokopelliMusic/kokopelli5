@@ -1,60 +1,39 @@
-# kokopelli5
+# Kokopelli 5
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Standalone versie van de spelletjes.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+## Development
 
-## Running the application in dev mode
+Om te ontwikkelen moet je een aantal dingen eerst installeren:
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
+- NodeJS 18
+- Java 21
+  - [Quarkus cli](https://quarkus.io/get-started/)
+- Docker
+- Make
+
+Daarna kan je vanuit de root de volgende commands doen:
+
+Om de backend op te starten (inclusief database etc.)
+
+```bash
+make backend
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+Voor de frontend (inclusief dependencies etc.)
 
-## Packaging and running the application
-
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
+```bash
+make frontend
 ```
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+Vervolgens zal de backend op http://localhost:8080 draaien en de frontend op http://localhost:5173
 
-## Creating a native executable
+## Database
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Dnative
-```
+In development zorgt Quarkus voor de database, deze start automagisch op in docker.
+Je kan hem vanuit HeidiSQL (o.i.d.) bereiken met
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/kokopelli5-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Related Guides
-
-- RESTEasy Reactive ([guide](https://quarkus.io/guides/resteasy-reactive)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-
-## Provided Code
-
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+- username: root
+- password: quarkus
+- port: 44444
+- ip: 127.0.0.1
