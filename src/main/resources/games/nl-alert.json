@@ -1,0 +1,12 @@
+{
+  "id": "nl-alert",
+  "title": "NL Alert",
+  "description": "Laatste die de ruimte verlaat verliest",
+  "players": {
+    "min": 0
+  },
+  "game": {
+    "title": "NL Alert!",
+    "first_row": "De eerste die de <span class='alt'>ruimte/tuin</span> verlaat vouwt een <span>bak</span>!"
+  }
+}

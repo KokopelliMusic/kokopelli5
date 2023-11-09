@@ -1,0 +1,60 @@
+.game
+  height: 100vh
+  width: 100vw
+
+  display: grid
+  grid-template-areas: "settings title timer" "game game game"
+  grid-template-rows: 4rem 1fr
+  grid-template-columns: 4rem 1fr 4rem
+
+.max
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+
+
+.settings
+  @extend .max
+  grid-area: settings
+  align-items: flex-start
+  margin: 1rem 0 0 1rem
+
+.title
+  @extend .max
+  grid-area: title
+  justify-content: center
+  align-items: center
+
+  h1
+    font-size: 2rem
+
+.timer
+  @extend .max
+  grid-area: timer
+  align-items: flex-end
+
+  time
+    margin: 1rem 1rem 0 0
+
+.innerGame
+  @extend .max
+  grid-area: game
+  justify-content: center
+  align-items: center
+
+.staticBg
+  height: 100vh
+  width: 100vw
+  position: absolute
+  z-index: -2
+
+  background-color: var(--color-bg)
+
+.flashBg
+  height: 100vh
+  width: 100vw
+  position: absolute
+  z-index: -1
+
+  background-color: var(--color-bg-flash)

@@ -1,0 +1,45 @@
+@use "styles/reset"
+@use "styles/variables"
+@use "styles/typography"
+
+@use "styles/button"
+@use "styles/form"
+
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@500&display=swap')
+
+body
+	height: 100vh
+	width: 100vw
+	background-color: var(--color-bg)
+	color: var(--color-text)
+
+	font-family: var(--font-family)
+
+.center
+	display: flex
+	justify-content: center
+	align-items: center
+
+main
+	@extend .center
+	flex-direction: column
+	height: 100vh
+	width: 100vw	
+
+.fade
+	animation: fade-in 1s
+
+@keyframes fade-in
+	from
+		opacity: 0
+	to
+		opacity: 1
+
+.fade-in-out
+	animation: fade-out 1s
+
+@keyframes fade-out
+	from
+		opacity: 1
+	to
+		opacity: 0

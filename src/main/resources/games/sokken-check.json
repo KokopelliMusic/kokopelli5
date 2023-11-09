@@ -1,0 +1,12 @@
+{
+  "id": "sokken-check",
+  "title": "Sokken Check",
+  "description": "Checkt of je sokken aan hebt",
+  "players": {
+    "min": 0
+  },
+  "game": {
+    "title": "Sokken check!",
+    "first_row": "Iedereen die op dit moment <span class='alt'>geen</span> sokken aan heeft, vouwt een <span>bak</span>!"
+  }
+}
